@@ -23,13 +23,15 @@ func main() {
 	db.AutoMigrate(&Product{})
 
 	// create
-	db.Create(&Product{Code: "D42", Price: 100})
+	db.Create(&Product{Code: "D43", Price: 400})
 
 	// read
 	var product Product
 	// db.First(&product, 1) // find product with primary key
-	db.First(&product, "code = ?", "D42") // find product with code 
-	fmt.Println(product)
+	db.First(&product, "code = ?", "D43") // find product with code 
+	//result := db.Find(&product)
+	//fmt.Println(result)
+	fmt.Println(product.Code)
 
 
 	// update
